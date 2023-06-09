@@ -1,3 +1,10 @@
+
+
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Business.DependencyResolvers.Autofac;
+
+
 namespace ProductManagementDemoAPI
 {
     public class Program
@@ -5,6 +12,13 @@ namespace ProductManagementDemoAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureContainer<ContainerBuilder>(builder =>
+                {
+                    builder.RegisterModule(new AutofacBusinessModule());
+                });
+                
 
             // Add services to the container.
 

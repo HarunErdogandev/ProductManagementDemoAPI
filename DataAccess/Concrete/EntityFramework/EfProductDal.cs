@@ -1,5 +1,6 @@
 ﻿using Core.Concrete.EntityFramework;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework.Context;
 using Entities.Entity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfProductDal: EfEntityReporistoryBase<Product, NorthwindContext> ,IProductDal
+    public class EfProductDal: EfEntityReporistoryBase<Product,NorthwindContext> ,IProductDal
     {
 
     }
