@@ -27,10 +27,7 @@ namespace Business.Concrate
 
         public IResult Delete(Product product)
         {
-            if (product.CategoryId==1)
-            {
-                
-            }
+            
            _productDal.Delete(product);
             return new SuccessResult(Messages.ProductDeleted);
         }
