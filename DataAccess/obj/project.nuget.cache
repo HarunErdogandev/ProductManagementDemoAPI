@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AueBbDuEgGG58oWC0DayIoDQh3c3cnTMVXcYKVojvdgqK7IajSEBad3UIZYZ73ysVErM5HwdrqgRs5bL6SXcgQ==",
+  "dgSpecHash": "YgnLlljVh0jhoDEOxNPY5Okc2VunkTPty3tqH5KMn/DbmCde7KD9qgbCGvOoyX2PCxJ80seHzR0vKFBaW4thyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Coder\\source\\repos\\ProductManagementDemoAPI\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Coder\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",

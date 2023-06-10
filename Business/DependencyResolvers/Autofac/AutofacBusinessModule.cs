@@ -17,10 +17,22 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            
+            ProductDepencyInj(builder);
+            CategoryDepencyInj(builder);
+            UserDepencyInj(builder);
+        }
+
+        private void ProductDepencyInj(ContainerBuilder builder)
+        {
             builder.RegisterType<ProductManager>().As<IProductService>();
             builder.RegisterType<EfProductDal>().As<IProductDal>();
+        }
 
-            CategoryDepencyInj(builder);
+        private void UserDepencyInj(ContainerBuilder builder)
+        {
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
         }
 
         private void CategoryDepencyInj(ContainerBuilder builder)

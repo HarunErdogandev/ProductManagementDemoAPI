@@ -14,7 +14,7 @@ namespace Business.Concrate
     public class CategoryManager : ICategoryService
     {   
         private ICategoryDal _categoryDal ;
-        public CategoryManager(ICategoryDal categoryDal)
+        public CategoryManager(ICategoryDal categoryDal) 
         {
             _categoryDal = categoryDal;
         }
