@@ -12,6 +12,7 @@ namespace Core.Utilities.Security.Encyption
     {
         public static SecurityKey CreateSecurityKey(string key)
         {
+            
             return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
         }
     }

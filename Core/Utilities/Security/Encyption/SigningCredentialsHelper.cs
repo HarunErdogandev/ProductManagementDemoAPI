@@ -11,6 +11,9 @@ namespace Core.Utilities.Security.Encyption
     {
         public static SigningCredentials CreateSigningCredentails(SecurityKey securityKey)
         {
+
+           
+
             return new SigningCredentials(securityKey,algorithm: SecurityAlgorithms.HmacSha256Signature);
         }
     }

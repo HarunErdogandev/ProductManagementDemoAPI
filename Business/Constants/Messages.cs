@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Contants
+namespace Business.Constants
 {
     public static class Messages
     {
@@ -19,5 +20,16 @@ namespace Business.Contants
         public static string CategoryUpdate = "Kategori Başarıyla Güncellendi";
         public static string CategoryListed = "Kategori Başarıyla Listelendi";
 
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+
+        public static string PasswordError = "Hatalı Şifre";
+
+        public static string SuccessfulLogin = "Sisteme Giriş başarılı";
+
+        public static string UserAlreadyExists = "Bu Kullancı Zaten Mevcut";
+
+        public static string UserRegistered="Kullanıcı Başarıyla Kaydedildi";
+
+        public static string AccessTokenCreated = "Access Token Başarıyla Oluşturuldu";
     }
 }

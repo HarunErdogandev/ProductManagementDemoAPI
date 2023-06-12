@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Business.Abstract;
 using Business.Concrate;
+using Core.Utilities.Security.Jwt;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrate;
@@ -21,6 +22,15 @@ namespace Business.DependencyResolvers.Autofac
             ProductDepencyInj(builder);
             CategoryDepencyInj(builder);
             UserDepencyInj(builder);
+            AuthDepencyInj(builder);
+        }
+
+        private void AuthDepencyInj(ContainerBuilder builder)
+        {
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+
         }
 
         private void ProductDepencyInj(ContainerBuilder builder)
