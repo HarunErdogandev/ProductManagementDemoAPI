@@ -10,9 +10,11 @@ namespace ProductManagementDemoAPI.Controllers
     public class CategoriesController : ControllerBase
     {
         public ICategoryService _categoryService;
+         
         public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
+            
         }
 
         [HttpGet("getcategoryıd")]
@@ -23,7 +25,8 @@ namespace ProductManagementDemoAPI.Controllers
             {
                 return Ok(Result.Data);
             }
-            return BadRequest(Result.Message); 
+            return BadRequest(Result.Message);
+            
         }
 
 
