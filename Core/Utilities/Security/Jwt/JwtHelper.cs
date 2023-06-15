@@ -22,18 +22,19 @@ namespace Core.Utilities.Security.Jwt
         public  IConfiguration Configuration { get; }
         TokenOptions _tokenOptions;
         DateTime _accessTokenExpiration;
+        DateTime date;
         public JwtHelper(IConfiguration configuration)
         {
              Configuration = configuration;
             _tokenOptions = Configuration.GetSection(key: "TokenOptions").Get<TokenOptions>();
-            _accessTokenExpiration= DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpirition);
+            _accessTokenExpiration= DateTime.Now.AddDays(_tokenOptions.AccessTokenExpirition);
 
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
 
 
-            var securityKey = SecurityKeyHelper.CreateSecurityKey(key:_tokenOptions.SecurityKey);
+            var securityKey = SecurityKeyHelper.CreateSecurityKey(key: _tokenOptions.SecurityKey);
 
            
 
@@ -54,11 +55,13 @@ namespace Core.Utilities.Security.Jwt
         public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions,User user,
             SigningCredentials signingCredentials,List<OperationClaim> operationClaims)
         {
+            var a = DateTime.Now;
+            
             var jwt=new JwtSecurityToken(
                 issuer:tokenOptions.Issuer,
                 audience:tokenOptions.Audience,
                 expires:_accessTokenExpiration,
-                notBefore:DateTime.Now,
+                notBefore:a,
                 claims:SetClaims(user,operationClaims),
                 signingCredentials:signingCredentials
 

@@ -71,5 +71,4 @@ C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bi
 C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bin\Debug\net6.0\Entities.pdb
 C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bin\Debug\net6.0\Autofac.dll
 C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
-C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\Coder\source\repos\ProductManagementDemoAPI\ProductManagementDemoAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

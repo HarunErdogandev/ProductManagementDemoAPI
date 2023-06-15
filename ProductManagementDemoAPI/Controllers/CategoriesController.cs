@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrate;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace ProductManagementDemoAPI.Controllers
         }
 
         [HttpGet("getcategoryıd")]
+        
         public IActionResult GetByCategory(int categoryid)
         {
             var Result=_categoryService.GetCategoryById(categoryid);
@@ -31,6 +33,7 @@ namespace ProductManagementDemoAPI.Controllers
 
 
         [HttpGet("getall")]
+        [Authorize()]
         public IActionResult GetAll()
         {
             var Result=_categoryService.GetList();

@@ -7,6 +7,8 @@ using Core.Utilities.Security.Encyption;
 using Core.Utilities.Security.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Reflection.Metadata;
 
 namespace ProductManagementDemoAPI
 {
@@ -49,7 +51,35 @@ namespace ProductManagementDemoAPI
             });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "dotnetClaimAuthorization", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please inser Token",
+                    Name = "Autorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "bearer",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+                    {
+                        new OpenApiSecurityScheme
+                    {
+                        Reference=new OpenApiReference
+                        {
+                            Type=ReferenceType.SecurityScheme,
+                            Id="Bearer"
+
+                        }
+                    },
+                        new string []{}
+                    }
+                    
+                });
+
+            });
 
             var app = builder.Build();
 
@@ -59,6 +89,8 @@ namespace ProductManagementDemoAPI
                
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                
+                
             }
             app.UseCors(builder =>
             {
@@ -66,10 +98,9 @@ namespace ProductManagementDemoAPI
             });
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 

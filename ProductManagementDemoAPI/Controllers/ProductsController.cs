@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ namespace ProductManagementDemoAPI.Controllers
         }
 
         [HttpGet("getall")]
+        [Authorize]
         public IActionResult GetList()
         {
             var Result = _productService.GetAll();
